@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="/clover.png">
+        <title>[The core.]</title>
+    <body>
+          <script>
+// [I have "borrowed" your code, dogwoz.]
+    let notified = false;
+
+    // Ask for permission on load
+    if ("Notification" in window && Notification.permission !== "granted") {
+      Notification.requestPermission();
+    }
+
+    window.addEventListener("scroll", function() {
+      const trigger = document.getElementById("trigger");
+      const triggerPosition = trigger.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      // If the top of the trigger is in the viewport and we haven't notified yet
+      if (triggerPosition < windowHeight && !notified) {
+        notified = true; // prevent multiple notifications
+
+        if (Notification.permission === "granted") {
+          new Notification("The World Machine says", {
+            body: "[There is nothing here.]",
+            icon: "https://dogewoz.neocities.org/dogverse.vhs/en.png" // optional
+          });
+                      // Handle click
+        notification.onclick = function(event) {
+          event.preventDefault(); // prevent default behavior (just in case)
+          window.open("https://twmworldmachine.github.io/index", "_blank");
+        };
+      }
+    }
+  });
+  </script>
+      
+    <audio id="bgaudio" src="/ambience4.ogg" autoplay loop></audio>
+    <button id="playPauseButton">▶︎</button>
+    <script>
+        const bgaudio = document.getElementById('bgaudio');
+        const playPauseButton = document.getElementById('playPauseButton');
+
+        // Function to toggle play/pause
+        playPauseButton.onclick = function() {
+            if (bgaudio.paused) {
+                bgaudio.play();
+                playPauseButton.textContent = '‖';
+            } else {
+                bgaudio.pause();
+                playPauseButton.textContent = '▶︎';
+            }
+        };
+    </script>
+<div id="trigger"> </div>
+    </body>
+</html>
