@@ -15,7 +15,18 @@
                 <br>
                 <br>
                 <br>
-                <img src="/clover.png" alt="[Clover.]" width="64" height="64">
+                <img src="/clover.png" alt="[Clover.]" width="64" height="64" id="clover">
+                <audio id="beepboop" src="robot-room.mp3"></audio>
+                    <script>
+                    // [Define clover and audio.]
+                     const clover = document.getElementById('clover');
+                     const solved = document.getElementById('solved');
+
+                    // [Allow clover to be pressed.]
+                    clover.onclick = function() {
+                    solved.play();
+                        };
+                    </script>
                 <h1>[Exist.]</h1>
         </center>
     </body>
