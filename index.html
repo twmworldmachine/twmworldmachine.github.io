@@ -6,10 +6,48 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" type="image/png" href="/clover.png">
         <title>[The core.]</title>
+
+
+        <style>
+            #playPauseButton {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 15px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+        </style>
     </head>
     <body>
+    <audio id="bgaudio" src="ambience4.ogg" autoplay loop></audio>
+    <button id="playPauseButton">‖</button>
+    <script>
+        const bgaudio = document.getElementById('bgaudio');
+        const playPauseButton = document.getElementById('playPauseButton');
+
+        // Function to toggle play/pause
+        playPauseButton.onclick = function() {
+            if (bgaudio.paused) {
+                bgaudio.play();
+                playPauseButton.textContent = '‖';
+            } else {
+                bgaudio.pause();
+                playPauseButton.textContent = '▶︎';
+            }
+        };
+    </script>
          <center>
                 <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br> 
                 <br>
                 <br>
                 <br>
