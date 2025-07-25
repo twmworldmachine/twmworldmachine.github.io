@@ -21,38 +21,36 @@
             }
         </style>
     <body>
-          <script>
-// [I have "borrowed" your code, dogwoz.]
-    let notified = false;
+    <script>
+        // Check if the browser supports notifications
+        if ("Notification" in window) {
+            // Request permission to show notifications if not already granted
+            if (Notification.permission !== "granted") {
+                Notification.requestPermission();
+            }
 
-    // Ask for permission on load
-    if ("Notification" in window && Notification.permission !== "granted") {
-      Notification.requestPermission();
-    }
+            // Function to create and show the notification
+            function showNotification() {
+                if (Notification.permission === "granted") {
+                    const notification = new Notification("The World Machine says:", {
+                        body: "[There is nothing here.]",
+                        icon: "faces/en4.png" // Replace with the path to your image
+                    });
 
-    window.addEventListener("scroll", function() {
-      const trigger = document.getElementById("trigger");
-      const triggerPosition = trigger.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+                    // Optional: Add a click event to the notification
+                    notification.onclick = function() {
+                        window.focus(); // Bring the window to the front
+                        this.close(); // Close the notification
+                    };
+                }
+            }
 
-      // If the top of the trigger is in the viewport and we haven't notified yet
-      if (triggerPosition < windowHeight && !notified) {
-        notified = true; // prevent multiple notifications
-
-        if (Notification.permission === "granted") {
-          new Notification("The World Machine says", {
-            body: "[There is nothing here.]",
-            icon: "https://twmworldmachine.github.io/faces/en4.png" // optional
-          });
-                      // Handle click
-        notification.onclick = function(event) {
-          event.preventDefault(); // prevent default behavior (just in case)
-          window.open("https://twmworldmachine.github.io/index", "_blank");
-        };
-      }
-    }
-  });
-  </script>
+            // Show notification when the page finishes loading
+            window.onload = showNotification;
+        } else {
+            console.log("[This browser does not support notifications.]");
+        }
+    </script>
       
     <audio id="bgaudio" src="/ambience4.ogg" autoplay loop></audio>
     <button id="playPauseButton">▶︎</button>
@@ -71,9 +69,5 @@
             }
         };
     </script>
-<div id="trigger">
-<br>
-<h6>[404.]</h6>
-</div>
     </body>
 </html>
