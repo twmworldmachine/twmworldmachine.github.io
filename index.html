@@ -79,7 +79,7 @@
                 <br>
                 <br>
                 <img src="/clover.png" alt="[Clover.]" width="64" height="64" id="clover" style="cursor: pointer;">
-                <audio id="corruption_noise" src="/glitch3.wav"></audio>
+                <audio id="glitch" src="/glitch3.wav"></audio>
                 <audio id="solved" src="/robot_room.mp3"></audio>
                     <script>
                     // [Define clover and audio.]
@@ -91,28 +91,26 @@
                     solved.play();
                         };
                     </script>
-
-                    <script>
-                        // [... ?!?!?!??!?!?!?!?!]
-
-                        const squares = document.getElementById('squares');
-                        const corruption_noise = document.getElementById('corruption_noise');
-
-                        squares.onclick = function() {
-                        corruption_noise.play();
-                        };
-                    </script>
                 <h1>[Exist.]</h1>
                 <p style="opacity: 0.05;">(=ↀωↀ=)</p>
                 <p style="opacity: 0.05;">[Nya~....]</p>
                 <p style="opacity: 0.07;">[Tell me what to add via Discord, and I'll consider it.]</p>
-                
+                <img src="/squaresanim.gif" alt="--------------" id="squares" style="cursor: not-allowed;">
                 <h1>SYSTEM STATUS REPORT</h1>
                 <h4>[This will be updated regularly.]</h4>
                 <p>System stability is 98.9%; OK</p>
                 <p>World status report: Currently stable with leftover issues from Solstice incident; OK</p>
-                <img src="/squaresanim.gif" alt="--------------" id="squares" style="cursor: not-allowed;">
                 <p>Memory testing: 256000 MB OK</p>
+                      <script>
+                        // [... ?!?!?!??!?!?!?!?!]
+
+                        const squares = document.getElementById('squares');
+                        const glitch = document.getElementById('glitch');
+
+                        squares.onclick = function() {
+                        glitch.play();
+                        };
+                    </script>
                 <div class="corruptedtext">
                     <img src="/squaresanim.gif" alt="--------------" class="overlay-gif" id="squares" style="cursor: not-allowed;">
                         <div class="text">
