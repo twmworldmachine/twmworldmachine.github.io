@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="/clover.png">
+        <title>[The mainframe.]</title>
+
+
+        <style>
+            #playPauseButton {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background-color: transparent;
+                color: purple;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 15px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+             .corruptedtext {
+            position: relative;
+            width: 300px; /* Set the width of the container */
+            height: 200px; /* Set the height of the container */
+            margin: 50px auto; /* Center the container */
+            text-align: center; /* Center the text */
+            background-color: #0f0f0f; /* Background color for visibility */
+            color: purple;
+        }
+
+        .overlay-gif {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 192px;
+            height: 64px;
+        }
+
+        .text {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            opacity: 0.07;
+        }
+        </style>
+    </head>
+    <body>
+      <center>
+        <h1>Music.</h1>
+        <p>Taken from dogwoz's unreleased mod.</p>
+        <audio id="cedric" src="/music/CedricTheme.ogg"></audio>
+        <audio id="proto" src="/music/PrototypeTheme.ogg"></audio>
+        <audio id="rue" src="/music/Rue's Theme.mp3"></audio>
+        <audio id="niko" src="/music/Song That Emerges from a Cat in Denial.mp3"></audio>
+        <audio id="region" src="/music/The Underworld.ogg"></audio>
+      </center>
+      
+    </body>
+    </html>
