@@ -79,6 +79,7 @@
                 <br>
                 <br>
                 <img src="/clover.png" alt="[Clover.]" width="64" height="64" id="clover" style="cursor: pointer;">
+                <audio id="corruption_noise" src="/glitch3.wav"></audio>
                 <audio id="solved" src="/robot_room.mp3"></audio>
                     <script>
                     // [Define clover and audio.]
@@ -94,8 +95,8 @@
                     <script>
                         // [... ?!?!?!??!?!?!?!?!]
 
-                        const squares = document.GetElementById('squares');
-                        const corruption_noise = document.GetElementById('corruption_noise');
+                        const squares = document.getElementById('squares');
+                        const corruption_noise = document.getElementById('corruption_noise');
 
                         squares.onclick = function() {
                         corruption_noise.play();
@@ -112,7 +113,6 @@
                 <p>World status report: Currently stable with leftover issues from Solstice incident; OK</p>
                 <img src="/squaresanim.gif" alt="--------------" id="squares" style="cursor: not-allowed;">
                 <p>Memory testing: 256000 MB OK</p>
-                <audio id="corruption_noise" src="/glitch3.wav"></audio>
                 <div class="corruptedtext">
                     <img src="/squaresanim.gif" alt="--------------" class="overlay-gif" id="squares" style="cursor: not-allowed;">
                         <div class="text">
